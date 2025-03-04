@@ -1,3 +1,5 @@
+//GET /json - Should return the following JSON string
+
 const http=require('http');
 
 let server=http.createServer((req,res)=>{

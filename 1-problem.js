@@ -1,3 +1,5 @@
+// GET /html - Should return the following HTML content. 
+// Note when opened in the browser it should display the HTML page and not the HTML code.
 
 let http=require('http');
 

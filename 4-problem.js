@@ -1,3 +1,5 @@
+//GET /status/{status_code} - Should return a response with a status code as specified in the request.
+
 const http = require("http");
 
 let server = http.createServer((req, res) => {
@@ -13,6 +15,8 @@ let server = http.createServer((req, res) => {
   } 
   else {
     res.end(`Response Code some error `);
+    res.statusCode = 400;
+
   }
 });
 
