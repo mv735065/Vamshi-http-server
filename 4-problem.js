@@ -3,11 +3,8 @@
 const http = require("http");
 
 let server = http.createServer((req, res) => {
-  console.log(req.url);
   
    let url=req.url.split('/');
-   console.log(url);
-   
 
   if (req.method === "GET" && url[1]==='status') {
 
