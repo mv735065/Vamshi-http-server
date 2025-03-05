@@ -6,7 +6,7 @@ let server=http.createServer((req,res)=>{
  console.log(req.method);
    
     if(req.method==='GET' && req.url==='/json'){
-        // res.writeHead(200,{ 'Content-Type': 'text/json' });
+        res.writeHead(200,{ 'Content-Type': 'text/json' });
         let data={
             "slideshow": {
               "author": "Yours Truly",
@@ -40,7 +40,7 @@ let server=http.createServer((req,res)=>{
 
 
 server.listen(8081,()=>{
-    console.log('Server running at http://localhost:8081');
+  console.log('Server running at http://localhost:8081/json');
 
     
 })

@@ -3,13 +3,15 @@
 const http = require("http");
 
 let server = http.createServer((req, res) => {
-  const statusRegex = /^\/status\/(.*)/;
+  console.log(req.url);
+  
+   let url=req.url.split('/');
+   console.log(url);
+   
 
-  const match = req.url.match(statusRegex);
+  if (req.method === "GET" && url[1]==='status') {
 
-  if (req.method === "GET" && match) {
-
-    const statusCode = parseInt(match[1], 10);
+    const statusCode = parseInt(url[2], 10);
     res.statusCode=statusCode;
     res.end(`Response Code status is ${res.statusCode}`);
   } 
@@ -21,5 +23,5 @@ let server = http.createServer((req, res) => {
 });
 
 server.listen(3000, () => {
-  console.log("listeing");
+  console.log('Server running at http://localhost:3000/status/200');
 });
